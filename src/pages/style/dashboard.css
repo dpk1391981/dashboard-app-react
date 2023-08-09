@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");
+
+.root {
+    display: flex;
+    justify-content: space-between;
+background: #FFF;
+}
+.root-cutom{
+    background: red;
+    width: 100%;
+    margin: 0px 0px 0px -15px;
+    padding: 25px;
+    border: 1px solid;
+}
+.heading1 {
+color: #333;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.create-new-dashboard {
+    color: #000;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.custom-name-dashboard {
+ color: #333;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.input-create-dashboard {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 540px;
+    height: 60px;
+    flex-shrink: 0;
+   }
+   
+
+   .matrix-info{
+    color: #000;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin: 15px 0px 0px 4px;
+   }
+
+   .create-dashbord-default-div {
+    width: 100%;
+    height: 465px;
+    flex-shrink: 0;
+    /* background: url("/public/images/dashboard-create.png"), lightgray 50% / cover no-repeat; */
+    background-color: white;
+    margin: 24px 0px;
+   }
+
+   .edit-mode{
+    display: inline-flex;
+padding: 7px 14px;
+justify-content: center;
+align-items: center;
+border-radius: 6px;
+    color: #FF4D42;
+font-size: 15.5px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+background: rgba(255, 77, 66, 0.20);
+   }
+
+   .btn-ai{
+    display: inline-flex;
+padding: 13px 24px;
+justify-content: center;
+align-items: center;
+gap: 7px;
+border-radius: 6px;
+background: rgba(255, 77, 66, 0.20);
+margin: 0px 25px 0px 0px;
+   }
+   .btn-save{
+    display: inline-flex;
+padding: 12px 37px;
+justify-content: center;
+align-items: center;
+border-radius: 6px;
+background: #FF4D42;
+margin: 0px 50px 0px 0px;
+cursor: pointer;
+float: right;
+   }
+   .save-text{color: #FFF;
+    font-family: Inter;
+    font-size: 17.5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+   }
+   .right-btn {
+    display: flex;
+   }
+   .btn-ai-text{
+    color: #FF4D42;
+font-family: Inter;
+font-size: 15.5px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+   }
+   .color-txt {
+    color: #000;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+   }
+   .color-txt-p{
+    color: #333;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+   }
+
+   .color-section{
+    margin: 15px 0px 0px 10px
+   }
+   .insert-metrics {
+    width: 450px;
+    display: inline-flex;
+    padding: 12px 37px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+background: #FF4D42;
+   }
+   .insert-metrics-txt {
+    color: #FFF;
+font-family: Inter;
+font-size: 17.5px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+   }
+   .check-box-form {
+    width:fit-content;
+padding: 5px 10px;
+
+   }
+   .widget-text{
+    color: #000;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+   }
+
+   .left-text-container{
+    display: flex;
+    flex-direction: column;
+   }
+   .custom-heading{
+    margin: 0px 0px 15px 0px !important;
+   }
+   .widget-container{
+    width: fit-content;
+    margin: 20px 0px 0px 10px;
+   }
+   .widget-checkbox-container{
+    margin: 10px 0px 0px 0px;
+   }
+   .color-box{
+    margin: -12px 0px 0px 0px;
+   }

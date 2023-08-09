@@ -1,0 +1,23 @@
+span.error-msg {
+    display: block;
+    font-size: 14px;
+    color:red;
+}
+
+
+.div-container {
+display: flex;
+flex-direction: column;
+}
+
+.mobile-error{
+    line-height: 1.5;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 3px;
+    margin-right: 14px;
+    margin-bottom: 0;
+    margin-left: 14px;
+    color: #FF4842;
+}
