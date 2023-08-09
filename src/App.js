@@ -35,6 +35,8 @@ export default function App() {
   console.log(`App component ...`);
   console.log(dashboard);
   console.log(auth);
+  console.log(`process.env.REACT_APP_API_URL`);
+  console.log(process.env.REACT_APP_API_URL);
 
   const isAnyDashboard = dashboard.dashboard && dashboard.dashboard.length > 0 ? true : false;
   return (

@@ -9,7 +9,7 @@ export const AllUserList = () => async (dispatch) => {
         type: INITITATE_USER_LIST,
       });
 
-      const { data } = await axios.get("/api/users");
+      const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/users");
 
       if (data) {
         dispatch({

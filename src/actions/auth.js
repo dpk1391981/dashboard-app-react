@@ -19,7 +19,7 @@ export const loadedUser = () => async (dispatch) => {
     setAuthToken(localStorage.token);
   }
   try {
-    const { data } = await axios.get("/api/auth");
+    const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/auth");
     dispatch(getDashboardByUser(data["_id"]));
     dispatch({
       type: USER_LOADED,
@@ -42,7 +42,7 @@ export const register =
       };
       const body = JSON.stringify({ fullName, email, password, mobileNumber, agree });
       try {
-        const res = await axios.post("/api/users", body, config);
+        const res = await axios.post(process.env.REACT_APP_API_URL + "/api/users", body, config);
         dispatch({
           type: REGISTER_SUCCESS,
           payload: res.data,
@@ -72,7 +72,7 @@ export const login = (email, password) => async (dispatch) => {
     };
     const body = JSON.stringify({ email, password });
     try {
-      const res = await axios.post("/api/auth", body, config);
+      const res = await axios.post(process.env.REACT_APP_API_URL + "/api/auth", body, config);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data,

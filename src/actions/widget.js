@@ -8,7 +8,7 @@ export const loadAllWidgets = () => async (dispatch) => {
       dispatch({
         type: INITIATE_WIDGETS,
       });
-      const { data } = await axios.get("/api/widget");
+      const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/widget");
       dispatch({
         type: SUCCESS_WIDGETS,
         payload: data,

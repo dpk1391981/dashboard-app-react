@@ -27,7 +27,7 @@ export const getDashboardByUser = (userId) => async (dispatch) => {
       dispatch({
         type: INITIATE_DASHBOARD_USER,
       });
-      const { data } = await axios.get("/api/dashboard/" + userId);
+      const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/dashboard/" + userId);
       dispatch({
         type: SUCCESS_DASHBOARD_USER,
         payload: data,
@@ -48,7 +48,7 @@ export const GetDashboardById = (id) => async (dispatch) => {
       dispatch({
         type: INITIATE_DASHBOARD_DETAIL,
       });
-      const { data } = await axios.get("/api/dashboard/view/" + id);
+      const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/dashboard/view/" + id);
       dispatch({
         type: SUCCESS_DASHBOARD_DETAIL,
         payload: data,
@@ -71,7 +71,7 @@ export const createDashboard = (params, userId) => async (dispatch) => {
     };
     const body = JSON.stringify(params);
     try {
-      const res = await axios.post("/api/dashboard/create", body, config);
+      const res = await axios.post(process.env.REACT_APP_API_URL + "/api/dashboard/create", body, config);
 
       dispatch({
         type: SUCCESS_CREATE_DASHBOARD,
@@ -102,7 +102,7 @@ export const UpdateDashboard = (params, userId) => async (dispatch) => {
     };
     const body = JSON.stringify(params);
     try {
-      const res = await axios.put("/api/dashboard/edit/" + params["_id"], body, config);
+      const res = await axios.put(process.env.REACT_APP_API_URL + "/api/dashboard/edit/" + params["_id"], body, config);
 
       dispatch({
         type: SUCCESS_CREATE_DASHBOARD,
@@ -134,7 +134,11 @@ export const FavouriteDashboard = (dashboard, uid) => async (dispatch) => {
     };
     const body = JSON.stringify({});
     try {
-      const res = await axios.put("/api/dashboard/favourite/" + dashboard, body, config);
+      const res = await axios.put(
+        process.env.REACT_APP_API_URL + "/api/dashboard/favourite/" + dashboard,
+        body,
+        config,
+      );
 
       console.log(`resresres`);
       console.log(res);
