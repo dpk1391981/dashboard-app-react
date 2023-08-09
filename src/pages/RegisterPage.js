@@ -45,7 +45,7 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/api/social/google";
+    window.location.href = process.env.REACT_APP_API_URL + "/api/social/google";
   };
 
   return (
