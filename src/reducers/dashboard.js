@@ -15,6 +15,7 @@ const initialState = {
   dashboard_detail: null,
   newDashbaord: null,
   loading: false,
+  loading_listing: false,
   loading_detail: false,
 };
 
@@ -25,21 +26,21 @@ export default function (state = initialState, action) {
       return {
         ...state,
         dashboard: payload,
-        loading: true,
+        loading_listing: true,
       };
 
     case SUCCESS_DASHBOARD_USER:
       return {
         ...state,
         dashboard: payload,
-        loading: false,
+        loading_listing: false,
       };
 
     case FAIL_DASHBOARD_USER:
       return {
         ...state,
         error: payload,
-        loading: false,
+        loading_listing: false,
       };
 
     case INITIATE_CREATE_DASHBOARD:

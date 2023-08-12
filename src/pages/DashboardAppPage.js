@@ -104,7 +104,7 @@ const DashboardAppPage = ({ dashboard, loading, resetDashboard }) => {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   dashboard: state.dashboard.dashboard,
-  loading: state.dashboard.loading,
+  loading: state.dashboard.loading_listing,
 });
 
 export default connect(mapStateToProps, { resetDashboard })(DashboardAppPage);
