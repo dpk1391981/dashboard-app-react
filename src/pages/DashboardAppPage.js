@@ -39,7 +39,7 @@ const DashboardAppPage = ({ dashboard, loading, resetDashboard }) => {
             </span>
           </div>
         </Typography>
-        {dashboard && dashboard.length && (
+        {dashboard && dashboard.length ? (
           <Button
             to='/dashboard/create'
             size='large'
@@ -51,6 +51,8 @@ const DashboardAppPage = ({ dashboard, loading, resetDashboard }) => {
               <SvgColor src={`/assets/icons/navbar/addIcon.svg`} sx={{ width: 18, height: 18 }} />
             </span>
           </Button>
+        ) : (
+          ""
         )}
       </div>
 
