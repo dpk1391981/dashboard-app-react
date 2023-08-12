@@ -32,7 +32,7 @@ const NOTIFICATIONS = [
   {
     id: faker.datatype.uuid(),
     title: "New dashboard created!",
-    description: "waiting for shipping",
+    description: "",
     avatar: null,
     type: "order_placed",
     createdAt: set(new Date(), { hours: 10, minutes: 30 }),
@@ -41,7 +41,7 @@ const NOTIFICATIONS = [
   {
     id: faker.datatype.uuid(),
     title: faker.name.fullName(),
-    description: "answered to your comment on the Minimal",
+    description: "New user created",
     avatar: "/assets/images/avatars/avatar_2.jpg",
     type: "friend_interactive",
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
@@ -152,18 +152,6 @@ export default function NotificationsPopover() {
               <NotificationItem key={notification.id} notification={notification} />
             ))}
           </List>
-
-          {/* <List
-            disablePadding
-            subheader={
-              <ListSubheader disableSticky sx={{ py: 1, px: 2.5, typography: "overline" }}>
-                Before that
-              </ListSubheader>
-            }>
-            {notifications.slice(2, 5).map((notification) => (
-              <NotificationItem key={notification.id} notification={notification} />
-            ))}
-          </List> */}
         </Scrollbar>
 
         <Divider sx={{ borderStyle: "dashed" }} />
