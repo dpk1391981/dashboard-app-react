@@ -27,18 +27,32 @@ const DashboardAppPage = ({ dashboard, loading, resetDashboard }) => {
       <Helmet>
         <title> Dashboard: Products | Dashboard App </title>
       </Helmet>
-
-      <Typography variant='h4' sx={{ mb: 5 }}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <span
-            style={{
-              fontSize: "22.5px",
-              color: "#000",
-            }}>
-            My Dashboard
-          </span>
-        </div>
-      </Typography>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Typography variant='h4' sx={{ mb: 5 }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <span
+              style={{
+                fontSize: "22.5px",
+                color: "#000",
+              }}>
+              My Dashboard
+            </span>
+          </div>
+        </Typography>
+        {dashboard && dashboard.length && (
+          <Button
+            to='/dashboard/create'
+            size='large'
+            variant='contained'
+            style={{ background: "#FF4D42" }}
+            component={RouterLink}>
+            <span>Create dashboard</span>
+            <span style={{ margin: "5px 2px 0px 10px" }}>
+              <SvgColor src={`/assets/icons/navbar/addIcon.svg`} sx={{ width: 18, height: 18 }} />
+            </span>
+          </Button>
+        )}
+      </div>
 
       <Grid container spacing={3}>
         {loading ? (
@@ -70,7 +84,7 @@ const DashboardAppPage = ({ dashboard, loading, resetDashboard }) => {
                     to='/dashboard/create'
                     size='large'
                     variant='contained'
-                    sx={{ background: "#FF4D42" }}
+                    style={{ background: "#FF4D42" }}
                     component={RouterLink}>
                     <span>Create dashboard</span>
                     <span style={{ margin: "5px 2px 0px 10px" }}>

@@ -97,7 +97,7 @@ const IntegrationPage = ({ resetDashboard }) => {
                 <Typography style={{ lineHeight: "2.5" }}>
                   We take care of your data seriously, Our <Link>Privacy Policy</Link>
                 </Typography>
-                <Button className='next-button'>
+                <Button className='next-button' style={{ background: "#FF4D42" }}>
                   <span className='button-text-next'>Next</span>
                 </Button>
               </div>

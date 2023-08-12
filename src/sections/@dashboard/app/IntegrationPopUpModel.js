@@ -39,8 +39,13 @@ export default function IntegrationPopUpModel({
     }));
   };
 
+  console.log(`active`);
+  console.log(active, Object.keys(active).filter((i) => active[i]).length);
   return (
     <Card {...other}>
+      {active && Object.keys(active).filter((i) => active[i]).length === 5 && (
+        <span style={{ display: "flex", justifyContent: "center", color: "green" }}>You have selected 5 matrics.</span>
+      )}
       <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 2, sm: 6, md: 12 }}>
         {MATRICS.map(({ name }, index) => (
           <Grid item>

@@ -3,14 +3,9 @@ import PropTypes from "prop-types";
 import { Box, Paper, Link, Stack, Card, CardContent, Divider, Typography, CardHeader, Button } from "@mui/material";
 // utils
 import { fToNow } from "../../../utils/formatTime";
-// components
-import Iconify from "../../../components/iconify";
 import Scrollbar from "../../../components/scrollbar";
 
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import ModeEditIcon from "@mui/icons-material/ModeEdit";
-// ----------------------------------------------------------------------
 
 AppNewsUpdate.propTypes = {
   title: PropTypes.string,
@@ -26,14 +21,11 @@ export default function AppNewsUpdate({ title, viewLink, editLink, subheader, li
   return (
     <Paper elevation={6}>
       <Card sx={{ maxWidth: 600 }} {...other}>
-        <CardHeader title={title} subheader={subheader} />
+        <CardHeader title={<Typography variant='h6'>{title}</Typography>} subheader={subheader} />
+
         <CardContent>
           <Scrollbar>
-            <Stack spacing={3} sx={{ p: 3, pr: 0 }}>
-              {/* {list.map((news) => (
-            <NewsItem key={news.id} news={news} />
-          ))} */}
-            </Stack>
+            <Stack spacing={3} sx={{ p: 3, pr: 0 }}></Stack>
           </Scrollbar>
 
           <Divider />
@@ -45,15 +37,6 @@ export default function AppNewsUpdate({ title, viewLink, editLink, subheader, li
             <Button variant='contained' color='inherit' onClick={() => onClickHandlRoute(viewLink)}>
               View
             </Button>
-
-            {/* <Link
-                size='small'
-                color='inherit'
-                component={RouterLink}
-                endIcon={<Iconify icon={"eva:arrow-ios-forward-fill"} />}
-                sx={{ textDecoration: "none" }}>
-                View all
-              </Link> */}
           </Box>
         </CardContent>
       </Card>

@@ -140,7 +140,7 @@ const DashboardCreateForm = ({
                 <div className='create-dashbord-default-div'>
                   <img src='/images/dashboard-create.png' />
                 </div>
-                <Button className='insert-metrics'>
+                <Button className='insert-metrics' style={{ background: "#FF4D42" }}>
                   <span className='insert-metrics-txt'>Insert Metrics</span>
                 </Button>
               </div>
