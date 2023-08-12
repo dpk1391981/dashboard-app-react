@@ -222,7 +222,7 @@ const DashboardWhileLabelPage = ({ GetDashboardById, loading, dashboard_detail }
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   dashboard_detail: state.dashboard.dashboard_detail,
-  loading: state.dashboard.loading,
+  loading: state.dashboard.loading_detail,
 });
 
 export default connect(mapStateToProps, { GetDashboardById })(DashboardWhileLabelPage);

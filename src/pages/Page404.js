@@ -26,7 +26,7 @@ export default function Page404({ title, subtitle }) {
       </Helmet>
 
       <Container>
-        <StyledContent sx={{ textAlign: "center", alignItems: "center" }}>
+        <StyledContent sx={{ textAlign: "center" }}>
           <Typography variant='h3' paragraph>
             {title || "Sorry, page not found!"}
           </Typography>
@@ -42,7 +42,12 @@ export default function Page404({ title, subtitle }) {
             sx={{ height: 260, mx: "auto", my: { xs: 5, sm: 10 } }}
           />
 
-          <Button to='/dashboard/app' size='large' variant='contained' component={RouterLink}>
+          <Button
+            to='/dashboard/app'
+            size='large'
+            variant='contained'
+            style={{ background: "red" }}
+            component={RouterLink}>
             Go to Home
           </Button>
         </StyledContent>

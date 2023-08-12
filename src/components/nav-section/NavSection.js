@@ -16,8 +16,6 @@ const NavSection = ({ data = [], dashboard, dashboard_detail, ...other }) => {
   const params = useLocation();
   const activeURL = params["pathname"].split("/")[2];
   const defaultOpenURL = ["create", "view", "edit"].includes(activeURL) ? true : false;
-  console.log(`defaultOpenURL`);
-  console.log(defaultOpenURL);
   const [open, setOpen] = useState(defaultOpenURL);
   const handleClick = (menu) => {
     setOpen(!menu ? false : !open);
@@ -31,6 +29,7 @@ const NavSection = ({ data = [], dashboard, dashboard_detail, ...other }) => {
             title: d["title"],
             path: "/dashboard/view/" + d["_id"],
             activeClass: d["_id"],
+            favourite: Boolean(d["favourite"]),
           };
         })
       : [];
@@ -70,12 +69,17 @@ const NavSection = ({ data = [], dashboard, dashboard_detail, ...other }) => {
               <Collapse in={open} timeout='auto' unmountOnExit>
                 <List component='div' disablePadding>
                   {item.subMenu.map((child, index) => (
-                    <>
+                    <div style={child["favourite"] ? { display: "flex" } : {}}>
                       <NavItem key={child.title} item={child} />
                       {index === item.subMenu.length - 1 && (
                         <Divider sx={{ borderStyle: "groove", background: "#000", margin: "12px 0px 0px 0px" }} />
                       )}
-                    </>
+                      {child["favourite"] && (
+                        <Link style={{ margin: "15px" }}>
+                          <SvgColor src={`/assets/icons/grade.svg`} sx={{ width: 18, height: 18, color: "yellow" }} />
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </List>
               </Collapse>

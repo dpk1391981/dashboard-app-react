@@ -14,23 +14,25 @@ import { setAlert } from "./alert";
 import setAuthToken from "../utils/setAuthToken.js";
 import { getDashboardByUser } from "./dashboard";
 
-export const loadedUser = () => async (dispatch) => {
-  if (localStorage.token) {
-    setAuthToken(localStorage.token);
-  }
-  try {
-    const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/auth");
-    dispatch(getDashboardByUser(data["_id"]));
-    dispatch({
-      type: USER_LOADED,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: AUTH_ERROR,
-    });
-  }
-};
+export const loadedUser =
+  (dashboardLoad = true) =>
+  async (dispatch) => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+    try {
+      const { data } = await axios.get(process.env.REACT_APP_API_URL + "/api/auth");
+      if (dashboardLoad) dispatch(getDashboardByUser(data["_id"]));
+      dispatch({
+        type: USER_LOADED,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: AUTH_ERROR,
+      });
+    }
+  };
 export const register =
   ({ fullName, email, password, mobileNumber, agree }) =>
   async (dispatch) => {

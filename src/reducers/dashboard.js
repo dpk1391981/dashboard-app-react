@@ -15,6 +15,7 @@ const initialState = {
   dashboard_detail: null,
   newDashbaord: null,
   loading: false,
+  loading_detail: false,
 };
 
 export default function (state = initialState, action) {
@@ -66,14 +67,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         dashboard_detail: payload,
-        loading: true,
+        loading_detail: true,
       };
 
     case SUCCESS_DASHBOARD_DETAIL:
       return {
         ...state,
         dashboard_detail: payload,
-        loading: false,
+        loading_detail: false,
       };
 
     case RESET_DASHBOARD_DETAIL:
@@ -87,7 +88,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         error: payload,
-        loading: false,
+        loading_detail: false,
       };
 
     default:

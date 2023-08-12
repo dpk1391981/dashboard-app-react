@@ -3,29 +3,38 @@ import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { LoadingButton } from "@mui/lab";
 import { resetDashboard } from "../actions/dashboard";
+import { UpdateUserProfile } from "../actions/user";
 import "./style/user.css";
-import { styled } from "@mui/material/styles";
-// @mui
+import { useNavigate } from "react-router-dom";
 import { Card, Paper, Typography, IconButton, InputAdornment, Grid } from "@mui/material";
 import Iconify from "../components/iconify";
 import RenderTextField from "../sections/form-helper/RenderTextField";
 import RenderMobileField from "../sections/form-helper/RenderMobileField";
 import { Field, reduxForm, reset, initialize } from "redux-form";
+import UserProfileValidation from "./validation/UserProfileValidation";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
-const UserProfileScreen = ({ user_profile, resetDashboard, handleSubmit, dispatch, submitting }) => {
+const UserProfileScreen = ({
+  user_profile,
+  resetDashboard,
+  UpdateUserProfile,
+  handleSubmit,
+  dispatch,
+  submitting,
+  submitFailed,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     resetDashboard();
   }, []);
+
+  console.log("==============submitFailed======================");
+  console.log(submitFailed);
+  console.log("==============submitFailed======================");
+
+  const resetForm = () => {
+    dispatch(reset("UserProfileScreenForm"));
+  };
 
   useEffect(() => {
     dispatch(
@@ -39,8 +48,14 @@ const UserProfileScreen = ({ user_profile, resetDashboard, handleSubmit, dispatc
   }, [user_profile]);
 
   const onSubmit = async (data) => {
-    console.log(`on submit`);
-    console.log(data);
+    if (data) {
+      data["_id"] = user_profile["_id"];
+      let result = await UpdateUserProfile(data);
+      if (result) {
+        resetForm();
+        navigate("/dashboard/user/profile", { replace: true });
+      }
+    }
   };
 
   return (
@@ -201,4 +216,5 @@ const mapStateToProps = (state) => ({
 
 export default reduxForm({
   form: "UserProfileScreenForm",
-})(connect(mapStateToProps, { resetDashboard })(UserProfileScreen));
+  validate: UserProfileValidation,
+})(connect(mapStateToProps, { resetDashboard, UpdateUserProfile })(UserProfileScreen));

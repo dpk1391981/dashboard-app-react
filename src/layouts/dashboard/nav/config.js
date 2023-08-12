@@ -29,12 +29,12 @@ const navConfig = [
     icon: icon("group-279"),
   },
 
-  {
-    title: "setting",
-    path: "/dashboard/setting",
-    activeClass: "setting",
-    icon: icon("group1"),
-  },
+  // {
+  //   title: "setting",
+  //   path: "/dashboard/setting",
+  //   activeClass: "setting",
+  //   icon: icon("group1"),
+  // },
   // {
   //   title: 'login',
   //   path: '/login',

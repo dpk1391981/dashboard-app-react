@@ -18,6 +18,7 @@ import IntegrationPage from "./pages/IntegrationPage";
 import DashboardWhileLabelPage from "./pages/DashboardWhileLabelPage";
 import AuthenticatingPage from "./pages/AuthenticatingPage";
 import DashboardEditPage from "./pages/DashboardEditPage";
+import IntegrationPageMatrics from "./pages/IntegrationPageMatrics";
 // ----------------------------------------------------------------------
 
 export default function Router({ defaultURL }) {
@@ -26,11 +27,12 @@ export default function Router({ defaultURL }) {
     { activeClass: "dashboard", path: "app", element: <DashboardAppPage /> },
     { activeClass: "user", path: "user", element: <UserPage /> },
     { activeClass: "integration", path: "integration", element: <IntegrationPage /> },
-    { activeClass: "setting", path: "setting", element: <MembershipPlan /> },
+    // { activeClass: "setting", path: "setting", element: <MembershipPlan /> },
     { activeClass: "dashboard", path: "create", element: <DashboardCreatePage /> },
     { activeClass: "dashboard", path: "view/:id", element: <DashboardWhileLabelPage /> },
     { activeClass: "dashboard", path: "edit/:id", element: <DashboardEditPage /> },
     { activeClass: "user", path: "user/profile", element: <UserProfileScreen /> },
+    { activeClass: "matrics", path: "integration/matrics", element: <IntegrationPageMatrics /> },
   ];
 
   const routesJson = [

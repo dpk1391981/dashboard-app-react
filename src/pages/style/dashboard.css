@@ -181,3 +181,113 @@ line-height: normal;
    .color-box{
     margin: -12px 0px 0px 0px;
    }
+   .metrics-box {
+    display: flex;
+    width: 500px;
+height: 150px;
+flex-shrink: 0;
+border-radius: 15px;
+border: 1px solid rgba(0, 0, 0, 0.10);
+background: #FDFDFF;
+box-shadow: 0px 20px 50px 0px rgba(220, 224, 249, 0.50);
+cursor: pointer;
+justify-content: space-between;
+   }
+   .img-box{
+
+    width: 63px;
+height: 63px;
+flex-shrink: 0;border-radius: 31.5px;
+background: rgba(255, 77, 66, 0.25);
+margin: 15px 0px 0px 15px;
+
+   }
+   .img-circle {
+    display: inline-block;
+    margin: 12px;
+   }
+   .content-text{
+    margin: 30px 0px 0px 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+   }
+   .connect-box {
+    width: 686px;
+height: 400px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #FDFDFF;
+   }
+   .logo-header {
+    width: 39px;
+height: 39px;
+flex-shrink: 0;
+width: 100%;
+height: 20vh;
+/* border: 1px solid; */
+text-align: center;
+margin: 20px 0px;
+/* background: url("/public/assets/images/integration/facebook.png"), lightgray 50% / cover no-repeat; */
+   }
+   .title-connect{
+    color: #000;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin: 0px 0px 0px 10px;
+   }
+   .sub-connect-title{
+    color: #333;
+text-align: center;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+   }
+   .button-connect{
+    border-radius: 9px;
+border: 1px solid #000;
+height: 70px;
+flex-shrink: 0;width: 80%;
+   }
+   .button-text{
+    color: #333;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+   }
+   .next-button{
+    width: 540px;
+height: 60px;
+flex-shrink: 0;
+border-radius: 9px;
+background: #FF4D42;
+margin: 20px;
+   }
+   .button-text-next{
+    color: #FDFDFF;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+   }
+   .top-five-text{
+    color: #000;
+font-size: 22.5px;
+font-style: normal;
+font-weight: 600;
+   }
+   .top-five-text-sub{
+    color: #000;
+font-size: 18.5px;
+font-style: normal;
+font-weight: 400;
+line-height: 2;
+   }

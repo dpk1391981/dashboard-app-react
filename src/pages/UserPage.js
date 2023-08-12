@@ -41,7 +41,8 @@ const TABLE_HEAD = [
   { id: "mobileNumber", label: "Phone No.", alignRight: false },
   { id: "isVerified", label: "Verified", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
-  { id: "" },
+  { id: "role", label: "Role", alignRight: false },
+  { id: "action", label: "Action", alignRight: true },
 ];
 
 // ----------------------------------------------------------------------
@@ -75,11 +76,8 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-const UserPage = ({ userList, loading, resetDashboard, AllUserList }) => {
-  console.log(`users userpage`);
-  console.log(userList);
-
-  const users = userList || [];
+const UserPage = ({ userList, user_detail, resetDashboard, AllUserList }) => {
+  const users = user_detail["isSuperAdmin"] ? userList || [] : [user_detail];
 
   useEffect(() => {
     resetDashboard();
@@ -191,7 +189,8 @@ const UserPage = ({ userList, loading, resetDashboard, AllUserList }) => {
               />
               <TableBody>
                 {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                  const { _id, fullName, role, status, mobileNumber, avatar, email_verified, email } = row;
+                  const { _id, fullName, status, mobileNumber, avatar, email_verified, email, role, isSuperAdmin } =
+                    row;
                   const selectedUser = selected.indexOf(fullName) !== -1;
 
                   return (
@@ -223,6 +222,10 @@ const UserPage = ({ userList, loading, resetDashboard, AllUserList }) => {
 
                       <TableCell align='left'>
                         <Label color={(status === "banned" && "error") || "success"}>{sentenceCase(status)}</Label>
+                      </TableCell>
+
+                      <TableCell align='left'>
+                        <Label color={"success"}>{isSuperAdmin ? "SUPER ADMIN" : role}</Label>
                       </TableCell>
 
                       <TableCell align='right'>
@@ -309,6 +312,7 @@ const UserPage = ({ userList, loading, resetDashboard, AllUserList }) => {
 };
 
 const mapStateToProps = (state) => ({
+  user_detail: state.auth.user,
   userList: state.user.userList,
   loadUser: state.user.loading,
 });
